@@ -1189,7 +1189,7 @@
 
                                                         <div class="form-group-inner col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                                             <label>Valor do Item</label>
-                                                            <input type="email" class="form-control" placeholder="R$ "
+                                                            <input type="text" name="manterReceitaDataRecebimento" class="form-control" placeholder="R$ "
                                                                 ng-model="receitaListResult.valorItemReceita" />
                                                         </div>
 
@@ -1199,7 +1199,7 @@
 
                                             <div class="form-group-inner">
                                                 <button type="button" class="btn btn-custon-rounded-four btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12"
-                                                    ng-click="save()">Cadastrar Item da Receita </button>
+                                                    ng-click="save(receitaListResult)">Cadastrar Item da Receita </button>
                                             </div>
 
                                         </div>
@@ -1233,8 +1233,8 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>#</th>
-                                                                <th>Categoria de Receita</th>
-                                                                <th>Valor do Item</th>
+                                                                <th>Origem da Receita</th>
+                                                                <th>Valor da Receita</th>
                                                                 <th>Extrato</th>
                                                                 <th>Ações</th>
                                                             </tr>
@@ -1243,7 +1243,8 @@
                                                             <tr ng-repeat="receitaListResult in receitaList" ng-click="selecionarDadosEdicao(receitaListResult)">
                                                                 <td>{{receitaListResult.codigo}}</td>
                                                                 <td>{{receitaListResult.origemReceita}}</td>
-                                                                <td>{{receitaListResult.valorItemReceita}}
+                                                                <td>{{receitaListResult.valorItemReceita}}</td>
+                                                                <td>{{receitaListResult.origemReceita}}</td>
                                                                     <i class="fa fa-level-up"></i>
                                                                 </td>
                                                                 <td>{{receitaListResult.valorExtrato}}</td>
@@ -1261,7 +1262,7 @@
                                                                                             <span class="caret"></span>
                                                                                         </button>
                                                                                         <ul class="dropdown-menu">
-                                                                                            <li><a href="#" ng-click="delete(receitaListResult)"><i
+                                                                                            <li><a href="#" ng-click="remove(receitaListResult)"><i
                                                                                                         class="fa fa-trash"></i>
                                                                                                     Excluir</a></li>
                                                                                             <li><a href="#"><i class="fa fa-edit"></i>
